@@ -36,8 +36,7 @@ app.use(express.json())
 
 app.use(
     cors({
-        origin: 'https://vahann-value.vercel.app',
-        methods: ['POST', 'GET'],
+        origin: '*',
         credentials: true
     })
 )
