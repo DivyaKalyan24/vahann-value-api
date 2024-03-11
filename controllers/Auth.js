@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import nodemailer from 'nodemailer'
+import path from 'path'
 
 import User from "../models/User.js"
 
@@ -16,7 +17,9 @@ const getHome = (req, res) => {
     res.setHeader('Expires', '-1')
     res.setHeader('Pragma', 'no-cache')
 
-    res.send('Hello from VAHANN VALUE. api')
+    console.log('/views/home.html')
+
+    return res.sendFile(path.resolve('../server/views/home.html'));
 }
 
 const postLoginController = async (req, res) => {
