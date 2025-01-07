@@ -19,7 +19,7 @@ const getHome = (req, res) => {
 
     console.log('/views/home.html')
 
-    return res.sendFile(path.resolve('../server/views/home.html'));
+    return res.json({"message": "Hello World"});
 }
 
 const postLoginController = async (req, res) => {
