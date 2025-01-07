@@ -11,7 +11,7 @@ import authRouter from './routes/Auth.js'
 
 const connectDB = async () => {
     try{
-        await mongoose.connect('mongodb+srv://divyakalyan245:g0sCRgWxJNhGEqSB@cluster0.ozbkcov.mongodb.net/vahann-value')
+        await mongoose.connect(`${process.env.MONGO_DB_URL}/vahann-value`)
         console.log('Connection Sucessful')
     }
     catch(err){
@@ -36,7 +36,7 @@ app.use(express.json())
 
 app.use(
     cors({
-        origin: '*',
+        origin: 'https://vahann-value.vercel.app',
         credentials: true
     })
 )
